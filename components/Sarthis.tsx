@@ -31,21 +31,21 @@ const sarthis = [
 
 const Sarthis: React.FC = () => {
   return (
-    <section id="sarthis" className="py-24 bg-kora-paper border-b border-swaad-red/10 paper-grain">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+    <section id="sarthis" className="py-16 sm:py-20 md:py-24 bg-kora-paper border-b border-swaad-red/10 paper-grain">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 sm:mb-14 md:mb-16 gap-6 sm:gap-8">
           <div className="max-w-xl">
-            <h2 className="font-serif font-bold text-4xl md:text-6xl text-swaad-red mb-4">Swaad Sarthis</h2>
-            <p className="font-mono text-ink-blue font-bold uppercase tracking-widest text-sm">
+            <h2 className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-swaad-red mb-3 sm:mb-4">Swaad Sarthis</h2>
+            <p className="font-mono text-ink-blue font-bold uppercase tracking-wider sm:tracking-widest text-xs sm:text-sm">
               Pilots of the Mission • Ration Card Gallery
             </p>
           </div>
-          <p className="font-mono text-xs text-sub-text max-w-sm text-right leading-relaxed">
-            "Meet your Sarthis. They aren't just cooks; they are the pilots of this mission. By eating here, you’re fueling a family’s dream."
+          <p className="font-mono text-[10px] sm:text-xs text-sub-text max-w-sm lg:text-right leading-relaxed">
+            "Meet your Sarthis. They aren't just cooks; they are the pilots of this mission. By eating here, you're fueling a family's dream."
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {sarthis.map((sarthi, idx) => (
             <motion.div
               key={sarthi.id}
@@ -54,21 +54,21 @@ const Sarthis: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.2 }}
               whileHover="hover"
-              className="relative group bg-[#fdfbf7] p-2 shadow-sm border border-black/5"
+              className="relative group bg-[#fdfbf7] p-1.5 sm:p-2 shadow-sm border border-black/5"
             >
-              <div className="border-2 border-ink-blue/10 p-4 relative overflow-hidden h-full flex flex-col">
-                <div className="flex justify-between items-start mb-4 border-b border-ink-blue pb-2">
+              <div className="border-2 border-ink-blue/10 p-3 sm:p-4 relative overflow-hidden h-full flex flex-col">
+                <div className="flex justify-between items-start mb-3 sm:mb-4 border-b border-ink-blue pb-2">
                    <div>
-                      <p className="text-[10px] font-mono uppercase text-gray-500">Issue Date</p>
-                      <p className="font-mono font-bold text-ink-blue">{sarthi.date}</p>
+                      <p className="text-[9px] sm:text-[10px] font-mono uppercase text-gray-500">Issue Date</p>
+                      <p className="font-mono font-bold text-ink-blue text-xs sm:text-sm">{sarthi.date}</p>
                    </div>
-                   <div className="w-10 h-10 border border-swaad-red rounded-full flex items-center justify-center rotate-12 opacity-60">
+                   <div className="w-8 h-8 sm:w-10 sm:h-10 border border-swaad-red rounded-full flex items-center justify-center rotate-12 opacity-60">
                       <span className="text-[8px] font-black text-swaad-red text-center leading-none">GOVT.<br/>APPRVD</span>
                    </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <div className="w-24 h-32 bg-gray-200 border-2 border-ink-blue relative overflow-hidden">
+                <div className="flex gap-3 sm:gap-4">
+                  <div className="w-20 h-28 sm:w-24 sm:h-32 bg-gray-200 border-2 border-ink-blue relative overflow-hidden flex-shrink-0">
                     <img 
                       src={sarthi.img} 
                       alt={sarthi.name} 
@@ -85,9 +85,9 @@ const Sarthis: React.FC = () => {
                       className="absolute inset-0 border-4 border-white/50 border-dashed pointer-events-none opacity-0 group-hover:opacity-100"
                     />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="font-serif font-bold text-xl text-ink-blue">{sarthi.name}</h3>
-                    <p className="font-mono text-[10px] uppercase text-swaad-red font-bold tracking-widest mt-1">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-serif font-bold text-lg sm:text-xl text-ink-blue truncate">{sarthi.name}</h3>
+                    <p className="font-mono text-[9px] sm:text-[10px] uppercase text-swaad-red font-bold tracking-wider sm:tracking-widest mt-1">
                       {sarthi.role}
                     </p>
                     <div className="mt-4">

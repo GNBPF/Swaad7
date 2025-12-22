@@ -61,9 +61,9 @@ const App: React.FC = () => {
 
   return (
     <div className="bg-kora-paper min-h-screen relative overflow-x-hidden selection:bg-swaad-yellow selection:text-swaad-red">
-      {/* Custom Postmark Cursor */}
+      {/* Custom Postmark Cursor - Hidden on touch devices */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] flex items-center justify-center"
+        className="hidden md:flex fixed top-0 left-0 pointer-events-none z-[9999] items-center justify-center"
         animate={{
           x: mousePos.x - (isHovering ? 20 : 12),
           y: mousePos.y - (isHovering ? 20 : 12),
@@ -77,7 +77,7 @@ const App: React.FC = () => {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.5 }}
-              className="w-6 h-6 border-2 border-dashed border-swaad-red rounded-full bg-white/20"
+              className="w-5 h-5 md:w-6 md:h-6 border-2 border-dashed border-swaad-red rounded-full bg-white/20"
             />
           ) : (
             <motion.div
@@ -85,10 +85,10 @@ const App: React.FC = () => {
               initial={{ opacity: 0, scale: 0.5, rotate: -45 }}
               animate={{ opacity: 1, scale: 1, rotate: 0 }}
               exit={{ opacity: 0, scale: 0.5, rotate: 45 }}
-              className="w-10 h-10 bg-swaad-red/90 rounded-full shadow-xl border-2 border-white/40 flex items-center justify-center"
+              className="w-9 h-9 md:w-10 md:h-10 bg-swaad-red/90 rounded-full shadow-xl border-2 border-white/40 flex items-center justify-center"
             >
-              <div className="w-7 h-7 border border-white/30 rounded-full border-dashed flex items-center justify-center">
-                <span className="material-symbols-outlined text-white text-lg">restaurant</span>
+              <div className="w-6 h-6 md:w-7 md:h-7 border border-white/30 rounded-full border-dashed flex items-center justify-center">
+                <span className="material-symbols-outlined text-white text-base md:text-lg">restaurant</span>
               </div>
             </motion.div>
           )}
@@ -96,7 +96,7 @@ const App: React.FC = () => {
       </motion.div>
 
       {/* Progress Bar (Flying Postcard Path) */}
-      <div className="fixed left-0 right-0 top-0 h-1 z-[60]">
+      <div className="fixed left-0 right-0 top-0 h-0.5 sm:h-1 z-[60]">
         <motion.div
           className="h-full bg-swaad-red relative"
           style={{ scaleX, originX: 0 }}
@@ -136,30 +136,30 @@ const App: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="fixed bottom-8 right-8 z-[100] w-14 h-14 bg-white border-2 border-dashed border-swaad-red rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform group"
+            className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 z-[100] w-12 h-12 sm:w-14 sm:h-14 bg-white border-2 border-dashed border-swaad-red rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform group"
           >
-            <span className="material-symbols-outlined text-swaad-red text-2xl group-hover:-translate-y-1 transition-transform">
+            <span className="material-symbols-outlined text-swaad-red text-xl sm:text-2xl group-hover:-translate-y-1 transition-transform">
               vertical_align_top
             </span>
           </motion.button>
         )}
       </AnimatePresence>
 
-      {/* Chai Stains Scattered */}
-      <ChaiStain className="top-[15%] left-[5%] opacity-[0.08]" rotate={45} />
-      <ChaiStain className="top-[45%] right-[2%] opacity-[0.05]" rotate={-15} />
-      <ChaiStain className="bottom-[10%] left-[8%] opacity-[0.07]" rotate={105} />
+      {/* Chai Stains Scattered - Hidden on mobile for performance */}
+      <ChaiStain className="hidden md:block top-[15%] left-[5%] opacity-[0.08]" rotate={45} />
+      <ChaiStain className="hidden md:block top-[45%] right-[2%] opacity-[0.05]" rotate={-15} />
+      <ChaiStain className="hidden lg:block bottom-[10%] left-[8%] opacity-[0.07]" rotate={105} />
     </div>
   );
 };
 
 const ChaiStain: React.FC<{ className?: string; rotate?: number }> = ({ className, rotate = 0 }) => (
   <div
-    className={`fixed pointer-events-none w-64 h-64 border-[12px] border-amber-900/30 rounded-full ${className}`}
+    className={`fixed pointer-events-none w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 border-[8px] sm:border-[10px] md:border-[12px] border-amber-900/30 rounded-full ${className}`}
     style={{ 
       transform: `rotate(${rotate}deg)`,
-      filter: 'blur(4px)',
-      boxShadow: 'inset 0 0 40px rgba(120, 60, 0, 0.1)' 
+      filter: 'blur(3px) md:blur(4px)',
+      boxShadow: 'inset 0 0 30px rgba(120, 60, 0, 0.1)' 
     }}
   />
 );
