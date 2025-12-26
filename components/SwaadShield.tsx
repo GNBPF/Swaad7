@@ -44,25 +44,83 @@ const SwaadShield: React.FC = () => {
 
           <div className="flex-1 space-y-6 sm:space-y-8 text-center lg:text-left">
             <div className="inline-flex items-center gap-1.5 sm:gap-2 border border-ink-blue px-2.5 sm:px-3 py-1 rounded-full text-ink-blue text-[10px] sm:text-xs font-mono uppercase tracking-[0.15em] sm:tracking-[0.2em] font-bold">
-              <span className="material-symbols-outlined text-xs sm:text-sm">verified_user</span>
-              The Swaad Shield
+              <span className="material-symbols-outlined text-xs sm:text-sm">favorite</span>
+              Why People Choose SWAAD7
             </div>
             
             <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-swaad-red leading-tight">
-              Our Sarthis cook with love, <br />
-              <span className="text-ink-blue">our tech protects their sweat.</span>
+              Mumbai Life ke Hisaab se Bana Hai
             </h2>
 
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 lg:gap-8 text-lg sm:text-xl md:text-2xl font-mono font-black text-ink-blue">
-              <motion.span animate={{ opacity: [1, 0.5, 1] }} transition={{ repeat: Infinity, duration: 2 }}>100% Secure.</motion.span>
-              <span className="w-[1px] h-6 sm:h-8 bg-gray-200" />
-              <motion.span animate={{ opacity: [1, 0.5, 1] }} transition={{ repeat: Infinity, duration: 2, delay: 1 }}>0% Fakes.</motion.span>
+            <div className="space-y-4 sm:space-y-5 text-left max-w-2xl mx-auto lg:mx-0">
+              <div className="flex items-start gap-3">
+                <span className="material-symbols-outlined text-swaad-red text-xl sm:text-2xl flex-shrink-0 mt-0.5">speed</span>
+                <p className="font-sans text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
+                  Fast service — late hone ka tension nahi
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="material-symbols-outlined text-swaad-red text-xl sm:text-2xl flex-shrink-0 mt-0.5">verified</span>
+                <p className="font-sans text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
+                  Saaf-suthra, hygienic cooking
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="material-symbols-outlined text-swaad-red text-xl sm:text-2xl flex-shrink-0 mt-0.5">balance</span>
+                <p className="font-sans text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
+                  Light, healthy & indulgent — sab ek jagah
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="material-symbols-outlined text-swaad-red text-xl sm:text-2xl flex-shrink-0 mt-0.5">currency_rupee</span>
+                <p className="font-sans text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
+                  Pocket-friendly prices
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="material-symbols-outlined text-swaad-red text-xl sm:text-2xl flex-shrink-0 mt-0.5">star</span>
+                <p className="font-sans text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
+                  Roz khane layak taste & consistency
+                </p>
+              </div>
             </div>
 
-            <p className="font-sans text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Our fraud-proof billing ensures every rupee you pay reaches the Sarthi’s pocket instantly. No middlemen, no delays. Just pure, direct impact.
+            <p className="font-serif font-bold text-ink-blue text-lg sm:text-xl md:text-2xl mt-6 sm:mt-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              Train miss ho sakti hai. <br />Chai nahi.
             </p>
           </div>
+        </div>
+
+        {/* Food Philosophy Section */}
+        <div className="mt-16 sm:mt-20 md:mt-24 max-w-3xl mx-auto text-center border-t border-gray-200 pt-12 sm:pt-16">
+          <h3 className="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-swaad-red mb-4 sm:mb-6">
+            Simple Food. Proper Taste.
+          </h3>
+          <p className="font-sans text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+            Yahan fancy naam ya overacting nahi.
+          </p>
+          <p className="font-sans text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mt-4">
+            Bas fresh ingredients, proper cooking aur honest swaad.
+          </p>
+          <p className="font-serif font-bold text-ink-blue text-lg sm:text-xl md:text-2xl mt-6 sm:mt-8">
+            Pani puri ho ya soup — mood set ho jaata hai.
+          </p>
+        </div>
+
+        {/* Timings Section */}
+        <div className="mt-16 sm:mt-20 md:mt-24 max-w-2xl mx-auto text-center border-t border-gray-200 pt-12 sm:pt-16">
+          <h3 className="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-swaad-red mb-4 sm:mb-6">
+            Kab Open Hai?
+          </h3>
+          <div className="flex items-center justify-center gap-3 sm:gap-4 mb-4">
+            <span className="material-symbols-outlined text-swaad-red text-3xl sm:text-4xl">schedule</span>
+            <p className="font-serif font-bold text-ink-blue text-xl sm:text-2xl md:text-3xl">
+              Subah 7 baje se Shaam 7 baje tak
+            </p>
+          </div>
+          <p className="font-sans text-gray-600 text-base sm:text-lg md:text-xl">
+            First local se evening chai-time tak.
+          </p>
         </div>
       </div>
     </section>

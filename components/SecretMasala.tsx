@@ -4,13 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const SecretMasala: React.FC = () => {
   const [isLidOpen, setIsLidOpen] = useState(false);
-  const [activeHint, setActiveHint] = useState<string | null>(null);
-
-  const hints = {
-    chili: "Something spicy is coming to Borivali...",
-    cinnamon: "Sweetness is about to travel to Bandra...",
-    cardamom: "Freshly brewed tales near Churchgate..."
-  };
 
   return (
     <section id="masala" className="py-16 sm:py-24 md:py-32 bg-chili-red relative overflow-hidden paper-grain">
@@ -176,68 +169,45 @@ const SecretMasala: React.FC = () => {
         </div>
 
         <div className="space-y-6 sm:space-y-8">
-          <h2 className="font-serif font-black text-3xl sm:text-4xl text-swaad-yellow uppercase tracking-wider sm:tracking-widest drop-shadow-md">
-            Gupt Menu
+          <h2 className="font-serif font-black text-3xl sm:text-4xl md:text-5xl text-swaad-yellow uppercase tracking-wider sm:tracking-widest drop-shadow-md">
+            SWAAD7 ke 7 Swaad
           </h2>
+          
+          <p className="font-sans text-white/90 text-base sm:text-lg md:text-xl mb-8 sm:mb-10 max-w-2xl mx-auto">
+            Ek cart. Saat solid cheezein. Confusion zero.
+          </p>
 
-          <div className="flex justify-center gap-8 sm:gap-10 md:gap-12">
-            {(Object.keys(hints) as Array<keyof typeof hints>).map((spice, index) => (
-              <div key={spice} className="flex flex-col items-center gap-2">
-                <motion.button
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.15, rotate: 5 }}
-                  whileTap={{ scale: 0.9 }}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setActiveHint(hints[spice]);
-                  }}
-                  className="w-14 h-14 sm:w-16 sm:h-16 bg-white/10 hover:bg-white/20 border-2 border-dashed border-swaad-yellow rounded-full flex items-center justify-center transition-colors duration-300"
-                >
-                  <motion.span 
-                    className="material-symbols-outlined text-swaad-yellow text-2xl sm:text-3xl"
-                    whileHover={{ scale: 1.2 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  >
-                    {spice === 'chili' ? 'local_fire_department' : spice === 'cinnamon' ? 'spa' : 'grain'}
-                  </motion.span>
-                </motion.button>
-                <span className="font-mono text-[9px] sm:text-[10px] text-white/50 uppercase tracking-widest">{spice}</span>
-              </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
+            {[
+              { name: 'Chai', desc: 'cutting, adrak, masala. Kadak, Mumbai-style', icon: 'coffee' },
+              { name: 'Coffee', desc: 'simple, strong, no drama', icon: 'local_cafe' },
+              { name: 'Snacks', desc: 'dosa, sandwiches, rolls & quick bites', icon: 'lunch_dining' },
+              { name: 'Healthy Bowls', desc: 'sprouts, fresh salads, halka aur filling', icon: 'set_meal' },
+              { name: 'Soups', desc: 'garma-garam, comfort wala', icon: 'soup_kitchen' },
+              { name: 'Pani Puri', desc: '7 different flavours, har mood ke liye ek', icon: 'local_dining' },
+              { name: 'Quick Combos', desc: 'pet bhare, pocket safe', icon: 'restaurant_menu' }
+            ].map((item, index) => (
+              <motion.div
+                key={item.name}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="bg-white/10 backdrop-blur-sm border-2 border-dashed border-swaad-yellow/50 rounded-lg p-4 sm:p-6 hover:bg-white/20 transition-all cursor-pointer"
+              >
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <span className="material-symbols-outlined text-swaad-yellow text-3xl sm:text-4xl flex-shrink-0">{item.icon}</span>
+                  <div>
+                    <h3 className="font-serif font-bold text-swaad-yellow text-lg sm:text-xl mb-2">{item.name}</h3>
+                    <p className="font-sans text-white/80 text-sm sm:text-base leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
 
-          <AnimatePresence mode="wait">
-            {activeHint && (
-              <motion.div
-                initial={{ opacity: 0, y: 20, scale: 0.9 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                transition={{ 
-                  duration: 0.3,
-                  ease: [0.23, 1, 0.32, 1]
-                }}
-                className="bg-white/95 backdrop-blur-sm p-4 sm:p-5 rounded-lg shadow-2xl inline-block border-2 border-swaad-yellow max-w-xs sm:max-w-md mx-4"
-              >
-                <p className="font-mono text-xs sm:text-sm font-bold text-swaad-red leading-relaxed">{activeHint}</p>
-                <motion.button 
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setActiveHint(null);
-                  }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="mt-3 text-[9px] sm:text-[10px] font-mono text-gray-500 uppercase hover:text-black transition-colors px-3 py-1 border border-gray-300 rounded hover:border-black"
-                >
-                  [ Close ]
-                </motion.button>
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          <p className="font-mono text-swaad-yellow/40 text-[9px] sm:text-[10px] uppercase tracking-widest pt-6 sm:pt-8 px-4">
-            Click icons for hints • Reveal the secret
+          <p className="font-serif font-bold text-white text-lg sm:text-xl md:text-2xl mt-8 sm:mt-10">
+            Saat choices. Roz ke liye perfect.
           </p>
         </div>
       </div>

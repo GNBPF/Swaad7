@@ -10,9 +10,24 @@ const SwaadRath: React.FC = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <h2 className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-kora-paper mb-3 sm:mb-4">The Swaad Rath</h2>
-        <p className="font-mono text-swaad-yellow text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-12 sm:mb-16 px-4">
+        <p className="font-mono text-swaad-yellow text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-6 sm:mb-8 px-4">
           Temple of Taste • High Hygiene • High Nostalgia
         </p>
+        
+        <div className="max-w-3xl mx-auto mb-12 sm:mb-16 space-y-4 sm:space-y-6 text-kora-paper">
+          <p className="font-serif font-bold text-xl sm:text-2xl md:text-3xl leading-relaxed">
+            Mumbai rukta nahi — aur hum bhi nahi.
+          </p>
+          <p className="font-sans text-base sm:text-lg md:text-xl leading-relaxed">
+            SWAAD7 ek all-day food truck hai jo subah 7 baje se shaam 7 baje tak fresh, familiar aur fast food serve karta hai.
+          </p>
+          <p className="font-sans text-base sm:text-lg md:text-xl leading-relaxed">
+            Local commuters, students, office-goers — sabke daily schedule ke hisaab se bana hai.
+          </p>
+          <p className="font-serif font-bold text-lg sm:text-xl md:text-2xl mt-6 sm:mt-8">
+            Ek cart. Ek stop. Full swaad.
+          </p>
+        </div>
 
         <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px] bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 flex items-center justify-center overflow-hidden">
           {/* Mumbai Skyline Scroll Placeholder */}
@@ -86,6 +101,43 @@ const SwaadRath: React.FC = () => {
               Scrolling through Mumbai Skyline
             </span>
           </div>
+        </div>
+
+        {/* Where You'll Find Us Section */}
+        <div className="mt-16 sm:mt-20 md:mt-24 max-w-4xl mx-auto">
+          <h3 className="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-kora-paper mb-6 sm:mb-8">
+            Jahan Mumbai Hamesha Hota Hai
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 text-left">
+            <div className="flex items-start gap-4">
+              <span className="material-symbols-outlined text-swaad-yellow text-3xl sm:text-4xl flex-shrink-0">train</span>
+              <div>
+                <p className="font-sans text-kora-paper text-base sm:text-lg md:text-xl font-semibold mb-2">Local train & metro stations ke bahar</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="material-symbols-outlined text-swaad-yellow text-3xl sm:text-4xl flex-shrink-0">local_hospital</span>
+              <div>
+                <p className="font-sans text-kora-paper text-base sm:text-lg md:text-xl font-semibold mb-2">Hospitals ke aas-paas</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="material-symbols-outlined text-swaad-yellow text-3xl sm:text-4xl flex-shrink-0">school</span>
+              <div>
+                <p className="font-sans text-kora-paper text-base sm:text-lg md:text-xl font-semibold mb-2">Colleges & universities ke near</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="material-symbols-outlined text-swaad-yellow text-3xl sm:text-4xl flex-shrink-0">business</span>
+              <div>
+                <p className="font-sans text-kora-paper text-base sm:text-lg md:text-xl font-semibold mb-2">Offices & busy business streets</p>
+              </div>
+            </div>
+          </div>
+          <p className="font-serif text-kora-paper text-lg sm:text-xl md:text-2xl mt-8 sm:mt-10 text-center leading-relaxed">
+            Log chal rahe ho, ruk rahe ho, wait kar rahe ho —<br />
+            <span className="font-bold">SWAAD7 paas hi milega.</span>
+          </p>
         </div>
       </div>
     </section>
