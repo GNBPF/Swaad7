@@ -6,15 +6,15 @@ const SecretMasala: React.FC = () => {
   const [isLidOpen, setIsLidOpen] = useState(false);
 
   return (
-    <section id="masala" className="py-16 sm:py-24 md:py-32 bg-chili-red relative overflow-hidden paper-grain">
+    <section id="masala" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 2xl:py-32 bg-chili-red relative overflow-hidden paper-grain">
       {/* Texture Watermarks */}
       <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none select-none overflow-hidden">
-        <h2 className="text-[10rem] sm:text-[15rem] md:text-[20rem] font-serif font-black text-white whitespace-nowrap">MUMBAI MUMBAI MUMBAI</h2>
+        <h2 className="text-[6rem] sm:text-[8rem] md:text-[12rem] lg:text-[15rem] xl:text-[18rem] 2xl:text-[20rem] font-serif font-black text-white whitespace-nowrap">MUMBAI MUMBAI MUMBAI</h2>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+      <div className="max-w-[1920px] mx-auto px-3 sm:px-4 md:px-5 lg:px-6 xl:px-8 2xl:px-12 text-center relative z-10">
         <div 
-          className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 mx-auto mb-12 sm:mb-14 md:mb-16 cursor-pointer perspective-1000" 
+          className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96 mx-auto mb-8 sm:mb-10 md:mb-12 lg:mb-14 xl:mb-16 cursor-pointer perspective-1000 touch-manipulation min-h-[192px] sm:min-h-[224px] md:min-h-[256px]" 
           onClick={() => setIsLidOpen(!isLidOpen)}
         >
           
@@ -106,9 +106,9 @@ const SecretMasala: React.FC = () => {
                 delay: isLidOpen ? 0.3 : 0,
                 ease: [0.23, 1, 0.32, 1]
               }}
-              className="absolute inset-0 flex items-center justify-center p-12 pointer-events-none"
+              className="absolute inset-0 flex items-center justify-center p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 pointer-events-none"
             >
-              <p className="font-serif font-bold text-white text-lg leading-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+              <p className="font-serif font-bold text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] px-2">
                 "The secret isn't in the recipe, it's in the hands of our Sarthis."
               </p>
             </motion.div>
@@ -168,16 +168,13 @@ const SecretMasala: React.FC = () => {
           </motion.div>
         </div>
 
-        <div className="space-y-6 sm:space-y-8">
-          <h2 className="font-serif font-black text-3xl sm:text-4xl md:text-5xl text-swaad-yellow uppercase tracking-wider sm:tracking-widest drop-shadow-md">
-            SWAAD7 ke 7 Swaad
-          </h2>
+        <div className="space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-7 xl:space-y-8">
           
-          <p className="font-sans text-white/90 text-base sm:text-lg md:text-xl mb-8 sm:mb-10 max-w-2xl mx-auto">
+          <p className="font-sans text-white/90 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-6 sm:mb-7 md:mb-8 lg:mb-9 xl:mb-10 max-w-2xl mx-auto leading-relaxed">
             Ek cart. Saat solid cheezein. Confusion zero.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8 max-w-5xl mx-auto">
             {[
               { name: 'Chai', desc: 'cutting, adrak, masala. Kadak, Mumbai-style', icon: 'coffee' },
               { name: 'Coffee', desc: 'simple, strong, no drama', icon: 'local_cafe' },
@@ -193,22 +190,18 @@ const SecretMasala: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-white/10 backdrop-blur-sm border-2 border-dashed border-swaad-yellow/50 rounded-lg p-4 sm:p-6 hover:bg-white/20 transition-all cursor-pointer"
+                className={`bg-white/10 backdrop-blur-sm border-2 border-dashed border-swaad-yellow/50 rounded-lg p-3 sm:p-4 md:p-5 lg:p-6 hover:bg-white/20 transition-all cursor-pointer touch-manipulation min-h-[100px] sm:min-h-[120px] ${index === 6 ? 'lg:col-start-2' : ''}`}
               >
-                <div className="flex items-start gap-3 sm:gap-4">
-                  <span className="material-symbols-outlined text-swaad-yellow text-3xl sm:text-4xl flex-shrink-0">{item.icon}</span>
+                <div className="flex items-start gap-2.5 sm:gap-3 md:gap-3.5 lg:gap-4">
+                  <span className="material-symbols-outlined text-swaad-yellow text-2xl sm:text-2.5xl md:text-3xl lg:text-4xl flex-shrink-0">{item.icon}</span>
                   <div>
-                    <h3 className="font-serif font-bold text-swaad-yellow text-lg sm:text-xl mb-2">{item.name}</h3>
-                    <p className="font-sans text-white/80 text-sm sm:text-base leading-relaxed">{item.desc}</p>
+                    <h3 className="font-serif font-bold text-swaad-yellow text-base sm:text-lg md:text-xl lg:text-2xl mb-1 sm:mb-1.5 md:mb-2 leading-tight">{item.name}</h3>
+                    <p className="font-sans text-white/80 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               </motion.div>
             ))}
           </div>
-
-          <p className="font-serif font-bold text-white text-lg sm:text-xl md:text-2xl mt-8 sm:mt-10">
-            Saat choices. Roz ke liye perfect.
-          </p>
         </div>
       </div>
     </section>

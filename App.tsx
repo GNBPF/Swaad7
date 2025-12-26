@@ -136,9 +136,10 @@ const App: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 z-[100] w-12 h-12 sm:w-14 sm:h-14 bg-white border-2 border-dashed border-swaad-red rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform group"
+            className="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 md:bottom-6 md:right-6 lg:bottom-8 lg:right-8 xl:bottom-10 xl:right-10 z-[100] w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-white border-2 border-dashed border-swaad-red rounded-full shadow-lg flex items-center justify-center hover:scale-110 active:scale-95 transition-transform group touch-manipulation min-h-[44px] min-w-[44px]"
+            aria-label="Back to top"
           >
-            <span className="material-symbols-outlined text-swaad-red text-xl sm:text-2xl group-hover:-translate-y-1 transition-transform">
+            <span className="material-symbols-outlined text-swaad-red text-lg sm:text-xl md:text-2xl lg:text-3xl group-hover:-translate-y-1 transition-transform">
               vertical_align_top
             </span>
           </motion.button>

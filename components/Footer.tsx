@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
   const [showConfetti, setShowConfetti] = useState(false);
 
   return (
-    <footer className="bg-black py-20 sm:py-24 md:py-32 relative text-center min-h-[500px] sm:min-h-[600px] flex flex-col justify-center overflow-hidden">
+    <footer className="bg-black py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 2xl:py-32 relative text-center min-h-[400px] sm:min-h-[500px] md:min-h-[550px] lg:min-h-[600px] flex flex-col justify-center overflow-hidden">
       {/* Confetti Trigger */}
       <motion.div 
         onViewportEnter={() => setShowConfetti(true)}
@@ -47,49 +47,57 @@ const Footer: React.FC = () => {
 
       <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
       
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 space-y-12 sm:space-y-14 md:space-y-16">
-        <div className="space-y-6 sm:space-y-8">
+      <div className="relative z-10 max-w-[1920px] mx-auto px-3 sm:px-4 md:px-5 lg:px-6 xl:px-8 2xl:px-12 space-y-8 sm:space-y-10 md:space-y-12 lg:space-y-14 xl:space-y-16">
+        <div className="space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-7 xl:space-y-8">
           <motion.h2 
             initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
-            className="font-serif font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-swaad-yellow leading-tight"
+            className="font-serif font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl text-swaad-yellow leading-tight sm:leading-snug md:leading-normal"
           >
             Abhi Bhook Lagi Hai?
           </motion.h2>
           
-          <p className="font-serif font-bold text-white text-xl sm:text-2xl md:text-3xl leading-relaxed">
+          <p className="font-serif font-bold text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-tight sm:leading-snug md:leading-relaxed">
             Seedha aao. Jaldi lo. Khush hoke jao.
           </p>
           
-          <p className="font-serif font-bold text-swaad-yellow text-2xl sm:text-3xl md:text-4xl mt-6 sm:mt-8">
-            SWAAD7 — Mumbai ka Roz ka Swaad.
-          </p>
+          <div className="flex items-center justify-center gap-2.5 sm:gap-3 md:gap-3.5 lg:gap-4 mt-5 sm:mt-6 md:mt-7 lg:mt-8 flex-wrap">
+            <span className="font-serif font-bold text-swaad-yellow text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl leading-tight sm:leading-snug">
+              Swaad7 Mumbai ka Roz ka Swaad.
+            </span>
+          </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-8 md:gap-10 pt-8 sm:pt-10">
+        <div className="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-4 sm:gap-5 md:gap-6 pt-6 sm:pt-7 md:pt-8 lg:pt-9 xl:pt-10">
           <motion.a
             href="#"
             whileHover={{ scale: 1.05, y: -3 }}
-            className="flex items-center gap-3 sm:gap-4 bg-swaad-yellow text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg shadow-lg font-serif font-bold text-base sm:text-lg md:text-xl uppercase"
+            className="flex items-center justify-center gap-2 sm:gap-2.5 md:gap-3 bg-swaad-yellow text-black px-4 sm:px-5 md:px-6 lg:px-7 xl:px-8 py-2 sm:py-2.5 md:py-3 lg:py-3 rounded-lg shadow-lg font-serif font-bold text-sm sm:text-base md:text-lg lg:text-base xl:text-lg uppercase min-h-[44px] sm:min-h-[48px] md:min-h-[52px]"
           >
-            <span className="material-symbols-outlined text-2xl sm:text-3xl">location_on</span>
-            <span>Aaj cart kahan hai? Follow karo</span>
+            <span className="material-symbols-outlined text-lg sm:text-xl md:text-2xl">location_on</span>
+            <span className="whitespace-nowrap">Aaj cart kahan hai? Follow karo</span>
           </motion.a>
           
           <motion.a
             href="#"
             whileHover={{ scale: 1.05, y: -3 }}
-            className="flex items-center gap-3 sm:gap-4 bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg shadow-lg font-serif font-bold text-base sm:text-lg md:text-xl uppercase border-2 border-swaad-yellow"
+            className="flex items-center justify-center gap-2 sm:gap-2.5 md:gap-3 bg-white text-black px-4 sm:px-5 md:px-6 lg:px-7 xl:px-8 py-2 sm:py-2.5 md:py-3 lg:py-3 rounded-lg shadow-lg font-serif font-bold text-sm sm:text-base md:text-lg lg:text-base xl:text-lg uppercase border-2 border-swaad-yellow min-h-[44px] sm:min-h-[48px] md:min-h-[52px]"
           >
-            <span className="material-symbols-outlined text-2xl sm:text-3xl">call</span>
-            <span>Daily flavours & updates ke liye connect raho</span>
+            <span className="material-symbols-outlined text-lg sm:text-xl md:text-2xl">call</span>
+            <span className="whitespace-nowrap">Daily flavours & updates ke liye connect raho</span>
           </motion.a>
         </div>
 
-        <div className="pt-12 sm:pt-16 md:pt-20 border-t border-gray-800">
-          <p className="text-gray-400 font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] sm:tracking-[0.4em] px-4">
-            © SWAAD7 | Fresh • Fast • Desi
-          </p>
+        <div className="pt-8 sm:pt-10 md:pt-12 lg:pt-14 xl:pt-16 2xl:pt-20 border-t border-gray-800">
+          <div className="flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap text-gray-400 font-mono text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.25em] sm:tracking-[0.3em] md:tracking-[0.4em] px-3 sm:px-4">
+            
+            <img 
+              src="/logos/Vector-2.png" 
+              alt="SWAAD7" 
+              className="h-4 sm:h-4.5 md:h-5 lg:h-6 w-auto opacity-80"
+            />
+            <span>| Fresh • Fast • Desi</span>
+          </div>
         </div>
       </div>
     </footer>

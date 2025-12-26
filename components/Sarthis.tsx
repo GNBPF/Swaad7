@@ -31,21 +31,21 @@ const sarthis = [
 
 const Sarthis: React.FC = () => {
   return (
-    <section id="sarthis" className="py-16 sm:py-20 md:py-24 bg-kora-paper border-b border-swaad-red/10 paper-grain">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 sm:mb-14 md:mb-16 gap-6 sm:gap-8">
+    <section id="sarthis" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 2xl:py-32 bg-kora-paper border-b border-swaad-red/10 paper-grain">
+      <div className="max-w-[1920px] mx-auto px-3 sm:px-4 md:px-5 lg:px-6 xl:px-8 2xl:px-12">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-8 sm:mb-10 md:mb-12 lg:mb-14 xl:mb-16 gap-5 sm:gap-6 md:gap-7 lg:gap-8">
           <div className="max-w-xl">
-            <h2 className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-swaad-red mb-3 sm:mb-4">Swaad Sarthis</h2>
-            <p className="font-mono text-ink-blue font-bold uppercase tracking-wider sm:tracking-widest text-xs sm:text-sm">
+            <h2 className="font-serif font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-swaad-red mb-2 sm:mb-3 md:mb-4 leading-tight sm:leading-snug md:leading-normal">Swaad Sarthis</h2>
+            <p className="font-mono text-ink-blue font-bold uppercase tracking-wider sm:tracking-widest text-[10px] sm:text-xs md:text-sm lg:text-base">
               Pilots of the Mission • Ration Card Gallery
             </p>
           </div>
-          <p className="font-mono text-[10px] sm:text-xs text-sub-text max-w-sm lg:text-right leading-relaxed">
+          <p className="font-mono text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-sub-text max-w-sm lg:text-right leading-relaxed">
             "Meet your Sarthis. They aren't just cooks; they are the pilots of this mission. By eating here, you're fueling a family's dream."
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8">
           {sarthis.map((sarthi, idx) => (
             <motion.div
               key={sarthi.id}
@@ -54,21 +54,21 @@ const Sarthis: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.2 }}
               whileHover="hover"
-              className="relative group bg-[#fdfbf7] p-1.5 sm:p-2 shadow-sm border border-black/5"
+              className="relative group bg-[#fdfbf7] p-1 sm:p-1.5 md:p-2 shadow-sm border border-black/5 touch-manipulation"
             >
-              <div className="border-2 border-ink-blue/10 p-3 sm:p-4 relative overflow-hidden h-full flex flex-col">
-                <div className="flex justify-between items-start mb-3 sm:mb-4 border-b border-ink-blue pb-2">
+              <div className="border-2 border-ink-blue/10 p-2.5 sm:p-3 md:p-3.5 lg:p-4 relative overflow-hidden h-full flex flex-col">
+                <div className="flex justify-between items-start mb-2 sm:mb-3 md:mb-4 border-b border-ink-blue pb-1.5 sm:pb-2">
                    <div>
-                      <p className="text-[9px] sm:text-[10px] font-mono uppercase text-gray-500">Issue Date</p>
-                      <p className="font-mono font-bold text-ink-blue text-xs sm:text-sm">{sarthi.date}</p>
+                      <p className="text-[8px] sm:text-[9px] md:text-[10px] font-mono uppercase text-gray-500">Issue Date</p>
+                      <p className="font-mono font-bold text-ink-blue text-[11px] sm:text-xs md:text-sm lg:text-base">{sarthi.date}</p>
                    </div>
-                   <div className="w-8 h-8 sm:w-10 sm:h-10 border border-swaad-red rounded-full flex items-center justify-center rotate-12 opacity-60">
-                      <span className="text-[8px] font-black text-swaad-red text-center leading-none">GOVT.<br/>APPRVD</span>
+                   <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 border border-swaad-red rounded-full flex items-center justify-center rotate-12 opacity-60">
+                      <span className="text-[7px] sm:text-[8px] font-black text-swaad-red text-center leading-none">GOVT.<br/>APPRVD</span>
                    </div>
                 </div>
 
-                <div className="flex gap-3 sm:gap-4">
-                  <div className="w-20 h-28 sm:w-24 sm:h-32 bg-gray-200 border-2 border-ink-blue relative overflow-hidden flex-shrink-0">
+                <div className="flex gap-2.5 sm:gap-3 md:gap-3.5 lg:gap-4">
+                  <div className="w-16 h-24 sm:w-20 sm:h-28 md:w-22 md:h-32 lg:w-24 lg:h-36 bg-gray-200 border-2 border-ink-blue relative overflow-hidden flex-shrink-0">
                     <img 
                       src={sarthi.img} 
                       alt={sarthi.name} 
@@ -86,12 +86,12 @@ const Sarthis: React.FC = () => {
                     />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-serif font-bold text-lg sm:text-xl text-ink-blue truncate">{sarthi.name}</h3>
-                    <p className="font-mono text-[9px] sm:text-[10px] uppercase text-swaad-red font-bold tracking-wider sm:tracking-widest mt-1">
+                    <h3 className="font-serif font-bold text-base sm:text-lg md:text-xl lg:text-2xl text-ink-blue truncate leading-tight">{sarthi.name}</h3>
+                    <p className="font-mono text-[8px] sm:text-[9px] md:text-[10px] uppercase text-swaad-red font-bold tracking-wider sm:tracking-widest mt-0.5 sm:mt-1 leading-tight">
                       {sarthi.role}
                     </p>
-                    <div className="mt-4">
-                      <span className="bg-swaad-yellow/20 px-2 py-1 border border-swaad-yellow font-mono text-[10px] text-ink-blue">
+                    <div className="mt-2 sm:mt-3 md:mt-4">
+                      <span className="bg-swaad-yellow/20 px-1.5 sm:px-2 py-0.5 sm:py-1 border border-swaad-yellow font-mono text-[9px] sm:text-[10px] md:text-xs text-ink-blue">
                         ID: {sarthi.id}
                       </span>
                     </div>
@@ -113,9 +113,9 @@ const Sarthis: React.FC = () => {
                   </p>
                 </motion.div>
 
-                <div className="mt-auto pt-6 border-t border-ink-blue/10 flex items-center justify-between opacity-50">
-                  <span className="text-[10px] font-mono uppercase tracking-widest">Official Record</span>
-                  <span className="text-[10px] font-mono">Status: Supported</span>
+                <div className="mt-auto pt-3 sm:pt-4 md:pt-5 lg:pt-6 border-t border-ink-blue/10 flex items-center justify-between opacity-50">
+                  <span className="text-[8px] sm:text-[9px] md:text-[10px] font-mono uppercase tracking-widest">Official Record</span>
+                  <span className="text-[8px] sm:text-[9px] md:text-[10px] font-mono">Status: Supported</span>
                 </div>
               </div>
             </motion.div>
